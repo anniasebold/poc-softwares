@@ -1,0 +1,3 @@
+.venv
+n8n/__pycache__
+n8n/.env

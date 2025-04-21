@@ -13,6 +13,34 @@ This project demonstrates a Proof of Concept (POC) for using the [n8n](https://n
 - [n8n](https://n8n.io/) installed and running locally or on a server.
 - Python 3.8+ installed.
 - Required Python dependencies (see `requirements.txt`).
+- Docker
+- Docker Compose
+
+# n8n with PostgreSQL
+
+Starts n8n with PostgreSQL as database.
+
+## Start
+
+To start n8n with PostgreSQL simply start docker-compose by executing the following
+command in the current folder.
+
+**IMPORTANT:** But before you do that change the default users and passwords in the [`.env`](.env) file!
+
+```
+docker-compose up -d
+```
+
+To stop it execute:
+
+```
+docker-compose stop
+```
+
+## Configuration
+
+The default name of the database, user and password for PostgreSQL can be changed in the [`.env`](.env) file in the current directory.
+
 
 ## Installation
 
@@ -24,5 +52,7 @@ This project demonstrates a Proof of Concept (POC) for using the [n8n](https://n
 
         {{ name }}
         {{ age }}
+        {{ city }}
+        {{ state }}
 
 After that an email is send to annia_sebold@ufms.br informing that register is Approved or Not Approved.
