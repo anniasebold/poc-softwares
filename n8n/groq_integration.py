@@ -9,7 +9,7 @@ Fale em forma de lista com itens numerados.
 """
 
 def question_request(city: str, state: str) -> str | None:
-    api_key = os.getenv("GROQ_API_KEY")
+    api_key = os.environ.get("GROQ_API_KEY")
     if not api_key:
         print("Please set the GROQ_API_KEY environment variable.")
         return
