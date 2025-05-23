@@ -1,0 +1,80 @@
+version: "3.1"
+
+intents:
+  - provide_info
+  - affirm
+  - deny
+
+entities:
+  - name
+  - age
+  - city
+  - state
+
+slots:
+  name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  age:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  city:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  state:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  approved:
+    type: bool
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+  response:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+forms:
+  info_form:
+    required_slots:
+      - name
+      - age
+      - city
+      - state
+
+responses:
+  utter_ask_name:
+    - text: "Digite seu nome (máximo 20 caracteres):"
+
+  utter_ask_age:
+    - text: "Digite sua idade:"
+
+  utter_ask_city:
+    - text: "Digite sua cidade:"
+
+  utter_ask_state:
+    - text: "Digite seu estado (sigla):"
+
+  utter_thank_you:
+    - text: "Obrigada! Processando sua solicitação..."
+
+  utter_invalid_data:
+    - text: "Os dados fornecidos são inválidos. Certifique-se de seguir os requisitos."
+
+actions:
+  - validate_info_form
+  - action_process_and_respond

@@ -1,0 +1,9 @@
+version: "3.1"
+
+nlu:
+- intent: provide_info
+  examples: |
+    - Meu nome é [João](name)
+    - Tenho [20](age) anos
+    - Moro em [Florianópolis](city)
+    - Meu estado é [SC](state)

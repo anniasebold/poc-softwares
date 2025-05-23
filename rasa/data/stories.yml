@@ -1,0 +1,10 @@
+version: "3.1"
+
+stories:
+- story: Coletar dados e gerar resposta
+  steps:
+    - intent: provide_info
+    - action: info_form
+    - active_loop: info_form
+    - active_loop: null
+    - action: action_process_and_respond

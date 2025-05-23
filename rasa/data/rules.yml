@@ -1,0 +1,16 @@
+version: "3.1"
+
+rules:
+  - rule: Preencher formulário de informações
+    steps:
+      - intent: provide_info
+      - action: info_form
+      - active_loop: info_form
+
+  - rule: Encerra o formulário
+    condition:
+      - active_loop: info_form
+    steps:
+      - action: info_form
+      - active_loop: null
+      - action: action_process_and_respond
